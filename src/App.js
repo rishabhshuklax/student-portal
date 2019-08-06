@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import StudentHome from "./components/Student/Home/StudentHome";
 import WrappedNormalLoginForm from "./components/Login/Login";
+import AttendancePage from "./components/Student/AttendancePage/AttendancePage";
 
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import Classes from "./index.module.css";
@@ -36,6 +37,7 @@ class App extends Component {
               );
             }}
           />
+          <Route path="/attendance" exact component={AttendancePage} />
         </Switch>
         <Layout.Footer className={Classes.footer}>
           <Icon type="copyright" theme="twoTone" />

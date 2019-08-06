@@ -38,15 +38,19 @@ class SideMenu extends Component {
           theme="light"
           mode="inline"
           className={Classes.sideNav}
-          defaultSelectedKeys={["1"]}
+          defaultSelectedKeys={[this.props.menuSelect]}
         >
           <Menu.Item key="1">
-            <Icon type="user" />
-            <span>Dashboard</span>
+            <Link to="/me">
+              <Icon type="user" />
+              <span>Dashboard</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="2">
-            <Icon type="calendar" />
-            <span>Attendance</span>
+            <Link to="/attendance">
+              <Icon type="calendar" />
+              <span>Attendance</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="3">
             <Icon type="book" />
