@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Icon, Layout, Typography } from "antd";
+import { Switch, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+import StudentHome from "./components/Student/Home/StudentHome";
+import WrappedNormalLoginForm from "./components/Login/Login";
+
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
+import Classes from "./index.module.css";
+// import "../node_modules/materialize-css/dist/css/materialize.min.css";
+class App extends Component {
+  render() {
+    return (
+      <>
+        <Switch>
+          <Route path="/me" exact component={StudentHome} />
+          <Route
+            path="/login"
+            exact
+            component={() => {
+              return (
+                <>
+                  <Layout.Header className={Classes.header}>
+                    <Typography.Title
+                      level={1}
+                      style={{ color: "white", fontWeight: "normal" }}
+                    >
+                      Axios Portal
+                    </Typography.Title>
+                  </Layout.Header>
+                  <Layout.Content>
+                    <WrappedNormalLoginForm />
+                  </Layout.Content>
+                </>
+              );
+            }}
+          />
+        </Switch>
+        <Layout.Footer className={Classes.footer}>
+          <Icon type="copyright" theme="twoTone" />
+          &nbsp;Axios
+        </Layout.Footer>
+      </>
+    );
+  }
 }
 
 export default App;

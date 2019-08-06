@@ -1,0 +1,71 @@
+import React, { Component } from "react";
+import { Layout, Icon, Menu } from "antd";
+import Classes from "../../../index.module.css";
+import { Link } from "react-router-dom";
+
+class SideMenu extends Component {
+  state = {
+    collapsed: true
+  };
+
+  toggle = () => {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
+  };
+  render() {
+    const { Sider } = Layout;
+    return (
+      <Sider
+        trigger={null}
+        theme="light"
+        collapsible
+        collapsed={this.state.collapsed}
+      >
+        <Icon
+          className="trigger"
+          type={this.state.collapsed ? "menu-unfold" : "menu-fold"}
+          onClick={this.toggle}
+          style={{
+            fontSize: 25,
+            marginTop: 25,
+            paddingRight: this.state.collapsed ? 0 : 10,
+            textAlign: this.state.collapsed ? "center" : "right",
+            width: "100%"
+          }}
+        />
+        <Menu
+          theme="light"
+          mode="inline"
+          className={Classes.sideNav}
+          defaultSelectedKeys={["1"]}
+        >
+          <Menu.Item key="1">
+            <Icon type="user" />
+            <span>Dashboard</span>
+          </Menu.Item>
+          <Menu.Item key="2">
+            <Icon type="calendar" />
+            <span>Attendance</span>
+          </Menu.Item>
+          <Menu.Item key="3">
+            <Icon type="book" />
+            <span>Assignments</span>
+          </Menu.Item>
+          <Menu.Item key="4">
+            <Icon type="setting" />
+            <span>Settings</span>
+          </Menu.Item>
+          <Menu.Item key="5">
+            <Link to="/login">
+              <Icon type="logout" />
+              <span>Logout</span>
+            </Link>
+          </Menu.Item>
+        </Menu>
+      </Sider>
+    );
+  }
+}
+
+export default SideMenu;
