@@ -10,7 +10,7 @@ class StudentPageLayout extends Component {
     return (
       <Layout>
         <Header />
-        <Layout>
+        <Layout style={{ background: "white" }}>
           <SideMenu menuSelect={this.props.menuSelect} />
           {this.props.children}
         </Layout>

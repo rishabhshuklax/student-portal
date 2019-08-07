@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 
-import { List, Avatar, Typography, Button, Icon } from "antd";
+import { List, Avatar, Typography, Button } from "antd";
 import AssignmetModal from "../AssignmentModal/AssignmentModal";
-
 
 class AssignmentList extends Component {
   static defaultProps = {
@@ -13,7 +12,9 @@ class AssignmentList extends Component {
       <List
         style={{ padding: "0px 20px" }}
         itemLayout="vertical"
-        dataSource={this.props.data.filter(v => Math.floor(Math.random() * 10) > 5)}
+        dataSource={this.props.data.filter(
+          v => Math.floor(Math.random() * 10) > 5
+        )}
         header={
           <Typography.Title level={2} style={{ fontWeight: "normal" }}>
             {this.props.title}

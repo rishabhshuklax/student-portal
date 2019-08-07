@@ -1,25 +1,33 @@
 import React, { Component } from "react";
-import Header from "../UI Components/Header/Header";
+import { Result} from "antd";
+
+import StudentPageLayout from "../Student/Layout/StudentPageLayout";
+import { Link } from "react-router-dom";
 
 class Error404 extends Component {
   render() {
     return (
       <>
-        <Header />
-        <div
-          style={{
-            height: "100vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center"
-          }}
-        >
-          <h1 style={{ color: "rgba(0,0,0,0.6)" }}>
-            Error 404!!
-            <br />
-            Page Not Found
-          </h1>
-        </div>
+        <StudentPageLayout>
+          <Result
+            status="404"
+            title="404"
+            subTitle="Sorry, the page you visited does not exist."
+            extra={
+              <Link to="/login" type="primary">
+                Back Home
+              </Link>
+            }
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              background: "#fff"
+            }}
+          />
+        </StudentPageLayout>
       </>
     );
   }

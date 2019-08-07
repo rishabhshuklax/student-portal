@@ -44,3 +44,8 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* Ant CSS Modified */
+
+.ant-result-image {
+  margin: 0px !important;
+}
