@@ -1,9 +1,8 @@
 .dashboard {
   display: flex;
-  margin: "24px 16px";
-  padding: 24;
-  background: "#fff";
-  min-height: 280;
+  margin: 24px 16px;
+  padding: 24px;
+  min-height: 280px;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;

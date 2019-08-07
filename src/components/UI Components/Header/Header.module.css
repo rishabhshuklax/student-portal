@@ -1,0 +1,28 @@
+.header {
+  color: white !important;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  height: auto;
+  background: #3a7ebf !important;
+}
+.header h1 {
+  padding-top: 10px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .header {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .header {
+    padding: 0px !important;
+    overflow: hidden;
+  }
+  .header h1 {
+    font-size: 25px !important;
+    padding-top: 20px;
+  }
+}

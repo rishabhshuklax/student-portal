@@ -1,15 +1,17 @@
 import React, { Component } from "react";
-import { Icon, Layout, Typography } from "antd";
+import { Icon, Layout } from "antd";
 import { Switch, Route } from "react-router-dom";
 
 import "./App.css";
 import StudentHome from "./components/Student/Home/StudentHome";
 import WrappedNormalLoginForm from "./components/Login/Login";
 import AttendancePage from "./components/Student/AttendancePage/AttendancePage";
+import Header from "./components/UI Components/Header/Header";
 
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import Classes from "./index.module.css";
-// import "../node_modules/materialize-css/dist/css/materialize.min.css";
+import Error404 from "./components/Error404/Error404";
+
 class App extends Component {
   render() {
     return (
@@ -22,14 +24,7 @@ class App extends Component {
             component={() => {
               return (
                 <>
-                  <Layout.Header className={Classes.header}>
-                    <Typography.Title
-                      level={1}
-                      style={{ color: "white", fontWeight: "normal" }}
-                    >
-                      Axios Portal
-                    </Typography.Title>
-                  </Layout.Header>
+                  <Header />
                   <Layout.Content>
                     <WrappedNormalLoginForm />
                   </Layout.Content>
@@ -38,6 +33,7 @@ class App extends Component {
             }}
           />
           <Route path="/attendance" exact component={AttendancePage} />
+          <Route component={Error404} />
         </Switch>
         <Layout.Footer className={Classes.footer}>
           <Icon type="copyright" theme="twoTone" />
