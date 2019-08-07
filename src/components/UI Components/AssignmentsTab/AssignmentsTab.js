@@ -10,7 +10,7 @@ class AssignmentsTab extends Component {
   };
   render() {
     return (
-      <Tabs defaultActiveKey="2" type="card" className={Classes.card}>
+      <Tabs defaultActiveKey="2"  className={Classes.card}>
         {this.props.tabData.map((v, i) => (
           <TabPane
             tab={
