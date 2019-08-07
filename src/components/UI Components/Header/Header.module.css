@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-around;
   height: auto;
-  background: #3a7ebf !important;
+  background: black !important;
 }
 .header h1 {
   padding-top: 10px;

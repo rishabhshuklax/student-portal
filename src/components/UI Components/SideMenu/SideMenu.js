@@ -53,8 +53,10 @@ class SideMenu extends Component {
             </Link>
           </Menu.Item>
           <Menu.Item key="3">
-            <Icon type="book" />
-            <span>Assignments</span>
+            <Link to="/assignments">
+              <Icon type="book" />
+              <span>Assignments</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="4">
             <Icon type="setting" />

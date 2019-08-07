@@ -11,6 +11,7 @@ import Header from "./components/UI Components/Header/Header";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import Classes from "./index.module.css";
 import Error404 from "./components/Error404/Error404";
+import AssignmentHome from './components/Student/Assignment/AssignmentHome';
 
 class App extends Component {
   render() {
@@ -33,6 +34,7 @@ class App extends Component {
             }}
           />
           <Route path="/attendance" exact component={AttendancePage} />
+          <Route path='/assignments' exact component={AssignmentHome} />
           <Route component={Error404} />
         </Switch>
         <Layout.Footer className={Classes.footer}>

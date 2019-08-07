@@ -1,0 +1,6 @@
+.card {
+  width: fit-content !important;
+  height: fit-content !important;
+  background: white !important;
+  margin-top: 30px;
+}
