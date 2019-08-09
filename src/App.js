@@ -11,7 +11,8 @@ import Header from "./components/UI Components/Header/Header";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import Classes from "./index.module.css";
 import Error404 from "./components/Error404/Error404";
-import AssignmentHome from './components/Student/Assignment/AssignmentHome';
+import AssignmentHome from "./components/Student/Assignment/AssignmentHome";
+import WrappedRegistrationForm from "./components/Register/Register";
 
 class App extends Component {
   render() {
@@ -33,8 +34,22 @@ class App extends Component {
               );
             }}
           />
+          <Route
+            path="/register"
+            exact
+            component={() => {
+              return (
+                <>
+                  <Header />
+                  <Layout.Content>
+                    <WrappedRegistrationForm />
+                  </Layout.Content>
+                </>
+              );
+            }}
+          />
           <Route path="/attendance" exact component={AttendancePage} />
-          <Route path='/assignments' exact component={AssignmentHome} />
+          <Route path="/assignments" exact component={AssignmentHome} />
           <Route component={Error404} />
         </Switch>
         <Layout.Footer className={Classes.footer}>

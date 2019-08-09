@@ -75,7 +75,7 @@ class NormalLoginForm extends Component {
                 </Button>
               </Link>
               <div>
-                Or <a href="#g">register now!</a>
+                Or <Link to="/register">register now!</Link>
               </div>
             </div>
           </Form.Item>
